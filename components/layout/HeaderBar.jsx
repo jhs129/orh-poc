@@ -5,10 +5,11 @@ import React from 'react';
 import { getDefaultContent } from "./HeaderBar.content";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Image from 'next/image';
 
 
 
-function HeaderBar({ logoImage, logoAlt, content }) {
+function HeaderBar({ logoImage, mobileLogoImage, logoAlt, content }) {
 
   let navigation;
   console.log("content.content");
@@ -22,7 +23,7 @@ function HeaderBar({ logoImage, logoAlt, content }) {
   console.log(navigation);
 
   return (
-    <header className="flex gap-5 justify-between px-6 pb-1.5 bg-white border-b border-solid border-b-zinc-300 max-md:flex-wrap max-md:pl-5">
+    <div className="flex gap-5 justify-between px-6 pb-1.5 bg-white border-b border-solid border-b-zinc-300 max-md:flex-wrap max-md:pl-5">
       <nav className="flex gap-5 justify-between mt-1.5">
         <div className="flex flex-col my-auto basis-0">
           <div className="flex flex-col mt-2 bg-primary-Dark">
@@ -32,20 +33,24 @@ function HeaderBar({ logoImage, logoAlt, content }) {
           </div>
           <p className="mt-2 text-xs leading-3 text-center uppercase text-primaryDark ">Menu</p>
         </div>
-        <img loading="lazy" src={logoImage} alt={logoAlt} className="aspect-[4.35] w-[300px]" />
+        <div className="pl-0 md:pl-48 lg:pl-0">
+          <Image loading="lazy" src={logoImage} alt={logoAlt} className="hidden lg:flex" width="300" height="200"/>
+          <Image loading="lazy" src={mobileLogoImage} alt={logoAlt} className="flex lg:hidden m-2" width="200" height="200"/>
+        </div>
       </nav>
-      <div className="flex gap-8 my-auto text-base leading-5 text-center text-white uppercase whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
+      <div className="flex flex-row gap-8 my-auto text-base leading-5 text-center text-white uppercase whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
         {navigation.group[0].level1.map((item, index) => (
-             <div className="grow justify-center px-8 py-4 leading-5 text-base bg-primaryAccent text-primaryLight hover:bg-primaryDark hover:text-secondaryAccent rounded-3xl max-md:px-5">
+             <div className="hidden lg:flex grow justify-center px-8 py-4 leading-5 text-base bg-primaryAccent text-primaryLight hover:bg-primaryDark hover:text-secondaryAccent rounded-3xl max-md:px-5">
              <a href={item.src} key={index}>{item.text}</a>
            </div>
         ))}
-        <div className="self-start px-2 py-[10px] w-10 h-10 rounded-3xl bg-zinc-100" >
-        <FontAwesomeIcon icon={faSearch} style={{ color: 'CF4B08' }} />
+        <div className="self-start lg:px-2 py-[10px] w-10 h-10 lg:w-14 lg:h-14 rounded-3xl bg-zinc-100" >
+        <FontAwesomeIcon icon={faSearch} style={{ color: 'CF4B08' }} className="h-6 lg:h-8" />
+
 
         </div>
       </div>
-    </header>
+    </div>
   );
 }
 

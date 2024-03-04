@@ -18,7 +18,7 @@ function TopNavBar(props) {
   console.log(navigation);
 
   return (
-    <header className="flex gap-5 justify-between px-6 py-2 text-center text-white uppercase bg-neutral-700 max-md:flex-wrap max-md:pr-5">
+    <div className="hidden lg:flex gap-5 justify-between px-6 py-2 text-center text-white uppercase bg-neutral-700 max-md:flex-wrap max-md:pr-5">
       {navigation.group[0].level1.map((item, index) => (
         <nav className="justify-center py-2 px-4 text-base leading-6 whitespace-nowrap rounded-md border-2 border-solid border-stone-950">
               <a href={item.src} key={index}>{item.text}</a>
@@ -32,7 +32,7 @@ function TopNavBar(props) {
             </div>
         ))} 
       </div>
-    </header>
+    </div>
   );
 };
 

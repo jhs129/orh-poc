@@ -14,7 +14,7 @@ const MenuItem = ({ children }) => <div className="mt-6">{children}</div>;
 
 const HealthcareComponent = () => {
   return (
-    <footer className="flex flex-col pt-12 pb-6 border-solid bg-neutral-700 border-t-[15px] border-t-rose-800">
+    <footer className="flex flex-col pt-12 pb-6 border-solid bg-primaryDark">
       <div id="logo">
         <img
           loading="lazy"
