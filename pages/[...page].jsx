@@ -4,6 +4,9 @@ import { BuilderComponent, builder, useIsPreviewing } from "@builder.io/react";
 import DefaultErrorPage from "next/error";
 import Head from "next/head";
 import "../builder-registry";
+import TopNavBar from "../components/layout/TopNavBar";
+import HeaderBar from "@/components/layout/HeaderBar";
+import Footer from "@/components/layout/Footer";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
@@ -11,6 +14,15 @@ builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 // content for a given page
 export const getStaticProps = async ({ params }) => {
   // Fetch the builder content for the given page
+
+  const topNavContent = await builder
+  .get("navigation", { query: { name: "top-nav-bar" }, enrich: true })
+  .promise();
+
+  const headerBarContent = await builder
+  .get("navigation", { query: { name: "headerbar" }, enrich: true })
+  .promise();
+
   const page = await builder
     .get("page", {
       userAttributes: {
@@ -23,6 +35,8 @@ export const getStaticProps = async ({ params }) => {
   return {
     props: {
       page: page || null,
+      topnavbar: topNavContent?.data || null,
+      headerbar: headerBarContent?.data || null,
     },
     // Revalidate the content every 5 seconds
     revalidate: 5,
@@ -67,7 +81,10 @@ export default function Page({ page }) {
         <title>{page?.data?.title}</title>
       </Head>
       {/* Render the Builder page */}
+      <TopNavBar content={page?.topnavbar || undefined}/>
+      <HeaderBar logoImage="/images/orh-logo.png" logoAlt="Orlando Health Logo" content={page?.headerbar || undefined}/>
       <BuilderComponent model="page" content={page || undefined} />
+      <Footer/>
     </>
   );
 }

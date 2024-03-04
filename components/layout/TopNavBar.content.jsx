@@ -8,6 +8,14 @@ const content = {
         "level1": [
           {
             "src": "/index",
+            "text": "Contact Us"
+          }
+        ]
+      },
+      {
+        "level1": [
+          {
+            "src": "/index",
             "text": "Home"
           },
           {

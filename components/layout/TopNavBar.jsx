@@ -10,21 +10,23 @@ import { getDefaultContent } from "./TopNavBar.content";
 function TopNavBar(props) {
 
   let navigation;
-  if (!props.navigation) {
+  if (!props.content) {
     navigation = getDefaultContent();
   } else {
-    navigation = props.navigation;
+    navigation = props.content;
   }
   console.log(navigation);
 
   return (
     <header className="flex gap-5 justify-between px-6 py-2 text-center text-white uppercase bg-neutral-700 max-md:flex-wrap max-md:pr-5">
-      <nav className="justify-center py-2 pr-4 pl-0.5 text-base leading-6 whitespace-nowrap rounded-md border-2 border-solid border-stone-950">
-        Contact Us
-      </nav>
+      {navigation.group[0].level1.map((item, index) => (
+        <nav className="justify-center py-2 px-4 text-base leading-6 whitespace-nowrap rounded-md border-2 border-solid border-stone-950">
+              <a href={item.src} key={index}>{item.text}</a>
+        </nav>
+      ))} 
 
       <div className="flex gap-5 justify-between my-auto text-sm leading-5 max-md:flex-wrap max-md:max-w-full">
-         {navigation.group[0].level1.map((item, index) => (
+         {navigation.group[1].level1.map((item, index) => (
               <div tabIndex="0" className="flex-auto text-sm leading-5 whitespace-nowrap cursor-pointer">
               <a href={item.src}>{item.text}</a>
             </div>
