@@ -11,25 +11,20 @@ const SectionTitle = ({ children }) => (
 
 const MenuItem = ({ children }) => <div className="mt-6">{children}</div>;
 
-const FooterSection = () => (
-  <footer className="self-start mt-7 ml-80 text-xs leading-4 text-white tracking-[3px] max-md:max-w-full">
-    COPYRIGHT © 2024 ORLANDO HEALTH. ALL RIGHTS RESERVED
-  </footer>
-);
 
 const HealthcareComponent = () => {
   return (
-    <div className="flex flex-col pt-12 pb-6 border-solid bg-neutral-700 border-t-[15px] border-t-rose-800">
-      <header>
+    <footer className="flex flex-col pt-12 pb-6 border-solid bg-neutral-700 border-t-[15px] border-t-rose-800">
+      <div id="logo">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/60563457eb65f481ee1109f84916e2c154866564106e4bb03c0056165f74aeb4?apiKey=9d9c17771b684627bed7d61d5f05ef44&"
           alt=""
           className="self-center mt-9 max-w-full aspect-[11.11] w-[399px]"
         />
-      </header>
-      <main>
-        <div className="flex justify-center items-center px-16 py-px mt-14 w-full border-t border-b border-solid border-y-white max-md:px-5 max-md:mt-10 max-md:max-w-full">
+      </div>
+      <div id="navigation">
+        <div className="flex justify-center items-center px-16 py-px mt-14 w-full border-t border-solid border-y-white max-md:px-5 max-md:mt-10 max-md:max-w-full">
           <div className="w-full max-w-[1360px] max-md:max-w-full">
             <nav className="flex gap-5 max-md:flex-col max-md:gap-0">
               <section className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
@@ -72,9 +67,11 @@ const HealthcareComponent = () => {
             </nav>
           </div>
         </div>
-      </main>
-      <FooterSection />
-    </div>
+      </div>
+      <div className="text-center w-80 lg:w-full mt-8 mx-auto text-xs leading-4 text-white tracking-[3px]">
+    COPYRIGHT © 2024 ORLANDO HEALTH. ALL RIGHTS RESERVED
+  </div>
+    </footer>
   );
 };
 
