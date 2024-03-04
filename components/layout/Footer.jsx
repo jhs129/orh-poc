@@ -15,7 +15,7 @@ const MenuItem = ({ children }) => <div className="mt-6">{children}</div>;
 const HealthcareComponent = () => {
   return (
     <footer className="flex flex-col pt-12 pb-6 border-solid bg-primaryDark">
-      <div id="logo">
+      <div id="logo" className="p-8">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/60563457eb65f481ee1109f84916e2c154866564106e4bb03c0056165f74aeb4?apiKey=9d9c17771b684627bed7d61d5f05ef44&"
