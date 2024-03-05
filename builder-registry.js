@@ -45,7 +45,7 @@ Builder.registerComponent(
       { name: "name", type: "string", defaultValue: "[name]" },
       { name: "title", type: "string", defaultValue: "[title]" },
       { name: "thumbnail", type: "file" },
-      { name: "name", type: "string", defaultValue: "[altText]" },
+      { name: "altText", type: "string", defaultValue: "[altText]" },
     ],
   },  
 );
