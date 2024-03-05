@@ -62,6 +62,14 @@ button {
   @apply mx-auto px-6 py-2 bg-primaryAccent hover:bg-secondaryAccent text-white hover:text-primaryDark rounded-full transition-colors duration-300 ease-in-out;
 }
 
+ul {
+  @apply list-disc;
+}
+
+li {
+  @apply mb-4;  
+}
+
 }
 
 .btn-carousel {

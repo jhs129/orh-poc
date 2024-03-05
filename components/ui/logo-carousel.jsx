@@ -61,12 +61,12 @@ function LogoCarousel(props) {
   }
 
   return (
-    <section className='flex flex-col items-center py-8'>
+    <section className='flex flex-col py-8 mx-auto max-w-7xl'>
       <h2>{props?.headline || "Lorem ipsum mit doler"}</h2>
       {props?.subheadline && <p>{props.subheadline}</p>}
-      <div className="flex flex-row mx-auto">
+      <div className="flex flex-row">
         <a className="my-auto" onClick={() => shiftSlides('reverse')}><ArrowNav height='60' width='60' lineWidth='1' circleColor='#CF4B08' arrowColor='#FFF' iconType='reverse' /></a>
-        <div className='flex flex-col md:flex-row space-x-4 h-48'>
+        <div className='flex flex-col md:flex-row space-x-4 h-48 w-full'>
           {slides.map((slide, index) => (
             <Image src={slide.image} alt={slide.alt} key={index} width={200} height={200} />
           ))}
