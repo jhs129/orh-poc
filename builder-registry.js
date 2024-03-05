@@ -69,3 +69,10 @@ Builder.registerComponent(
     ],
   }
 );
+
+Builder.registerComponent(
+    dynamic(() => import("./components/ui/social-links")), 
+    {
+      name: "Social Links",
+    } 
+);
