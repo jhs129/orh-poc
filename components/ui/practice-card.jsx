@@ -26,7 +26,7 @@ function PracticeCard(props) {
       >
         <div className="flex mx-auto">
           <h3 className="text-primaryLight group-hover:text-primaryDark mx-auto">
-            <Link href={`/specialties-and-services/${name}`}>{title}</Link>
+            <Link href={`/practices/${name}`}>{name}</Link>
           </h3>
         </div>
       </div>
