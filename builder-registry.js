@@ -1,4 +1,4 @@
-import { builder, Builder } from "@builder.io/react";
+import { builder, Builder, withChildren } from "@builder.io/react";
 import dynamic from "next/dynamic";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
@@ -48,4 +48,24 @@ Builder.registerComponent(
       { name: "altText", type: "string", defaultValue: "[altText]" },
     ],
   },  
+);
+
+Builder.registerComponent(
+  withChildren(dynamic(() => import("./components/ui/card-section"))),
+  {
+    name: "Card Section",
+    childRequirements: {
+      message: "You can only put in Card components",
+      query: {
+        "component.name": { $in: ["Practice Card"] },
+      },
+    },
+    inputs: [
+      {
+        name: "headline",
+        type: "text",
+        defaultValue: "[Default Headline]",
+      },
+    ],
+  }
 );

@@ -4,7 +4,7 @@
 import React from "react";
 
 const SectionTitle = ({ children }) => (
-  <div className="flex flex-col items-start py-12 pr-20 pl-10 text-base font-bold leading-5 text-white uppercase border-b border-solid border-b-white tracking-[4.5px] max-md:px-5 max-md:max-w-full h-[520px]">
+  <div className="flex flex-col items-start py-12 pr-20 pl-10 text-base font-bold leading-5 text-white uppercase border-b border-solid border-b-white tracking-[4.5px] max-md:px-5 max-md:max-w-full h-[520px] lg:h-[640px]">
     {children}
   </div>
 );
@@ -14,18 +14,18 @@ const MenuItem = ({ children }) => <div className="mt-6">{children}</div>;
 
 const HealthcareComponent = () => {
   return (
-    <footer className="flex flex-col pt-12 pb-6 border-solid bg-primaryDark border-t-8 border-tertiaryAccent">
+    <footer className="flex flex-col pb-6 border-solid bg-primaryDark border-t-8 border-tertiaryAccent">
       <div id="logo" className="p-8">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/60563457eb65f481ee1109f84916e2c154866564106e4bb03c0056165f74aeb4?apiKey=9d9c17771b684627bed7d61d5f05ef44&"
-          alt=""
-          className="self-center mt-9 max-w-full aspect-[11.11] w-[399px]"
+          alt="Orlando Health Logo"
+          className="self-center mt-9 max-w-full w-96"
         />
       </div>
       <div id="navigation">
         <div className="flex justify-center items-center px-16 py-px mt-14 w-full border-t border-solid border-y-white max-md:px-5 max-md:mt-10 max-md:max-w-full">
-          <div className="w-full max-w-[1360px] max-md:max-w-full">
+          <div className="w-full max-w-7xl max-md:max-w-full">
             <nav className="flex gap-5 max-md:flex-col max-md:gap-0">
               <section className="flex flex-col w-[33%] max-md:ml-0 max-md:w-full">
                 <SectionTitle>
@@ -68,7 +68,7 @@ const HealthcareComponent = () => {
           </div>
         </div>
       </div>
-      <div className="text-center w-80 lg:w-full mt-8 mx-auto text-xs leading-4 text-white tracking-[3px]">
+      <div className="px-16 text-left w-80 lg:w-full mt-8 mx-auto text-xs leading-4 text-white tracking-[3px]">
     COPYRIGHT © 2024 ORLANDO HEALTH. ALL RIGHTS RESERVED
   </div>
     </footer>

@@ -11,13 +11,13 @@ function PracticeCard(props) {
   let nameValue = name || 'sample-practice'; 
 
   return (
-    <div className="flex h-96 w-80 md:w-64 md:h-80">
+    <div className="flex h-80 w-72 xl:w-80">
       <div id="image">
-        <img src={imageValue} alt={altText} className="h-80 w-full" />
+        <img src={imageValue} alt={altText} className="h-60 w-full" />
       </div>
       <div
         id="overlay"
-        className={`absolute bottom-0 ${isHovered ? 'h-1/3' : 'h-1/4'} w-80 md:w-64 bg-primaryAccent hover:bg-secondaryAccent group`}
+        className={`absolute bottom-0 ${isHovered ? 'h-1/3' : 'h-1/4'} w-72 xl:w-80  bg-primaryAccent hover:bg-secondaryAccent group`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
