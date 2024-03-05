@@ -93,7 +93,7 @@ import {
 
               
                       <div className="flex flex-col md:flex-row">
-                      <Hero headline={data?.title || "Title Not Defined"} subheadline={data?.subheadline || "Subheadline not defined"} blurb={data?.blurb || "Blurb not defined"} image={data?.thumbnail || ""} />
+                      <Hero headline={data?.title} subheadline={data?.subheadline} blurb={data?.blurb} image={data?.thumbnail} />
                     </div>
                
 

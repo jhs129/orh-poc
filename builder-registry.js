@@ -42,8 +42,8 @@ Builder.registerComponent(
   {
     name: "Practice Card",
     inputs: [
-      { name: "name", type: "string", defaultValue: "[name]" },
-      { name: "title", type: "string", defaultValue: "[title]" },
+      { name: "name", type: "string", defaultValue: "sample-practice" },
+      { name: "title", type: "string", defaultValue: "Sample Practice" },
       { name: "thumbnail", type: "file" },
       { name: "altText", type: "string", defaultValue: "[altText]" },
     ],

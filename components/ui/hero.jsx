@@ -11,11 +11,12 @@ function Hero(props) {
             </div>
             <div className="text-left">
                 <h1 className="text-left">{headline}</h1>
-                <h2>{subheadline}</h2>
+                {subheadline && <h2 className="text-left">{subheadline}</h2>}
                 <p>{blurb}</p>
             </div>
         </div>
     );
 };
+
 
 export default Hero;
