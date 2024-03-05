@@ -12,7 +12,7 @@ export default function Home(props) {
   return (
     <main>
       <TopNavBar content={props?.topnavbar || undefined}/>
-      <HeaderBar logoImage="/images/orh-logo.png" logoAlt="Orlando Health Logo" content={props?.headerbar || undefined}/>
+      <HeaderBar logoImage="/images/orh-logo.png" mobileLogoImage="/images/orh-logo-mobile.png" logoAlt="Orlando Health Logo" content={props?.headerbar || undefined}/>  
       <LogoCarousel />
       <Footer />
     </main>

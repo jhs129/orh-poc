@@ -4,7 +4,7 @@
 import React from "react";
 
 const SectionTitle = ({ children }) => (
-  <div className="flex flex-col items-start py-12 pr-20 pl-10 text-base font-bold leading-5 text-white uppercase border-b border-solid border-b-white tracking-[4.5px] max-md:px-5 max-md:max-w-full">
+  <div className="flex flex-col items-start py-12 pr-20 pl-10 text-base font-bold leading-5 text-white uppercase border-b border-solid border-b-white tracking-[4.5px] max-md:px-5 max-md:max-w-full h-[520px]">
     {children}
   </div>
 );
