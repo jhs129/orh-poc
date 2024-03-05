@@ -73,6 +73,9 @@ import {
       </header>
         <main>
           <div className="site-container">
+
+            
+      
             <BuilderContent
               content={practice}
               options={{ includeRefs: true }}
@@ -82,16 +85,19 @@ import {
                 <React.Fragment>
                   <Head>
                     {/* Render meta tags from custom field */}
-                    <title>{data?.title}</title>
+                    <title>{data?.title || "Title Not Defined"}</title>
 
                   </Head>
  
-                  {/* Render the Builder drag/drop'd content */}
-                  <div className="flex flex-col md:flex-row">
-                    <Hero headline={data?.title} subheadline={data?.subheadline} blurb={data?.blurb} image={data?.thumbnail} />
-                  </div>
+           
 
-             
+              
+                      <div className="flex flex-col md:flex-row">
+                      <Hero headline={data?.title || "Title Not Defined"} subheadline={data?.subheadline || "Subheadline not defined"} blurb={data?.blurb || "Blurb not defined"} image={data?.thumbnail || ""} />
+                    </div>
+               
+
+                           
                   <BuilderComponent
                     content={fullContent}
                     options={{ includeRefs: true }}
@@ -100,7 +106,9 @@ import {
                 </React.Fragment>
               )}
             </BuilderContent>
+    
           </div>
+
         </main>
         <Footer navigation={props?.footer || undefined} socialLinks={props?.socialLinks || undefined} copyright={props?.settings?.copyright || undefined} />
       </>
