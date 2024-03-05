@@ -4,9 +4,9 @@ import { BuilderComponent, builder, useIsPreviewing } from "@builder.io/react";
 import DefaultErrorPage from "next/error";
 import Head from "next/head";
 import "../builder-registry";
-import TopNavBar from "../components/layout/TopNavBar";
-import HeaderBar from "@/components/layout/HeaderBar";
-import Footer from "@/components/layout/Footer";
+import TopNavBar from "../components/layout/top-nav-bar";
+import HeaderBar from "@/components/layout/header-bar";
+import Footer from "@/components/layout/footer";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 

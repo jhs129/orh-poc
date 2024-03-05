@@ -12,10 +12,10 @@ const SectionTitle = ({ children }) => (
 const MenuItem = ({ children }) => <div className="mt-6">{children}</div>;
 
 
-const HealthcareComponent = () => {
+const Footer = () => {
   return (
     <footer className="flex flex-col pb-6 border-solid bg-primaryDark border-t-8 border-tertiaryAccent">
-      <div id="logo" className="p-8">
+      <div id="logo" className="p-8 self-center">
         <img
           loading="lazy"
           src="https://cdn.builder.io/api/v1/image/assets/TEMP/60563457eb65f481ee1109f84916e2c154866564106e4bb03c0056165f74aeb4?apiKey=9d9c17771b684627bed7d61d5f05ef44&"
@@ -65,14 +65,17 @@ const HealthcareComponent = () => {
                 </SectionTitle>
               </section>
             </nav>
-          </div>
-        </div>
-      </div>
-      <div className="px-16 text-left w-80 lg:w-full mt-8 mx-auto text-xs leading-4 text-white tracking-[3px]">
+            <div className="mt-8 text-xs leading-4 text-white tracking-[3px]">
     COPYRIGHT © 2024 ORLANDO HEALTH. ALL RIGHTS RESERVED
   </div>
+          </div>
+          
+        </div>
+      
+
+      </div>
     </footer>
   );
 };
 
-export default HealthcareComponent;
+export default Footer;

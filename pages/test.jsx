@@ -1,7 +1,7 @@
 import Image from "next/image";
-import TopNavBar from "@/components/layout/TopNavBar";
-import HeaderBar from "@/components/layout/HeaderBar";
-import Footer from "@/components/layout/Footer";
+import TopNavBar from "@/components/layout/top-nav-bar";
+import HeaderBar from "@/components/layout/header-bar";
+import Footer from "@/components/layout/footer";
 import { BuilderComponent, builder, useIsPreviewing } from "@builder.io/react";
 import Head from "next/head";
 import LogoCarousel from "@/components/ui/logo-carousel";
