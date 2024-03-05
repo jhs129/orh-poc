@@ -3,16 +3,12 @@
  */
 import React from 'react';
 import { getDefaultContent } from "./HeaderBar.content";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import Image from 'next/image';
-
-
+import SearchIcon from '../icons/search-icon';
 
 function HeaderBar({ logoImage, mobileLogoImage, logoAlt, content }) {
-
   let navigation;
- 
+
   if (!content) {
     navigation = getDefaultContent();
   } else {
@@ -31,20 +27,18 @@ function HeaderBar({ logoImage, mobileLogoImage, logoAlt, content }) {
           <p className="mt-2 text-xs leading-3 text-center uppercase text-primaryDark ">Menu</p>
         </div>
         <div className="pl-0 md:pl-48 lg:pl-0">
-          <Image loading="lazy" src={logoImage} alt={logoAlt} className="hidden lg:flex" width="300" height="200"/>
-          <Image loading="lazy" src={mobileLogoImage} alt={logoAlt} className="flex lg:hidden m-2" width="200" height="200"/>
+          <Image loading="lazy" src={logoImage} alt={logoAlt} className="hidden lg:flex" width="300" height="200" />
+          <Image loading="lazy" src={mobileLogoImage} alt={logoAlt} className="flex lg:hidden m-2" width="200" height="200" />
         </div>
       </nav>
       <div className="flex flex-row gap-8 my-auto text-base leading-5 text-center text-white uppercase whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
         {navigation.group[0].level1.map((item, index) => (
-             <div className="hidden lg:flex grow justify-center px-8 py-4 align-middle leading-5 text-base bg-primaryAccent text-primaryLight hover:bg-primaryDark hover:text-secondaryAccent rounded-3xl max-md:px-5">
-             <a href={item.src} key={index}>{item.text}</a>
-           </div>
+          <div className="hidden lg:flex grow justify-center px-8 py-4 align-middle leading-5 text-base bg-primaryAccent text-primaryLight hover:bg-primaryDark hover:text-secondaryAccent rounded-3xl max-md:px-5">
+            <a href={item.src} key={index}>{item.text}</a>
+          </div>
         ))}
-        <div className="self-start lg:px-2 py-[10px] w-10 h-10 lg:w-14 lg:h-14 rounded-3xl bg-zinc-100" >
-        <FontAwesomeIcon icon={faSearch} style={{ color: 'CF4B08' }} className="h-6 lg:h-8" />
-
-
+        <div className="self-start lg:pl-4 lg:pt-3 pt-2 pl-2 w-10 h-10 lg:w-14 lg:h-14 rounded-3xl bg-zinc-100">
+          <SearchIcon size="24" color="#CF4B08"/>
         </div>
       </div>
     </div>

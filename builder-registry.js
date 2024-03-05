@@ -13,3 +13,25 @@ Builder.registerComponent(
     ],
   }
 );
+
+Builder.registerComponent(
+  dynamic(() => import("./components/ui/logo-carousel")),
+  {
+    name: "Logo Carousel",
+    inputs: [
+      { name: "headline", type: "string", defaultValue: "[Headline]"},
+      {
+        name: "slides",
+        type: "list",
+        subFields: [
+          {
+            name: "image",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg"],
+          },
+          { name: "altText", defaultValue: "default alt text", type: "string" },
+        ],
+      },
+    ],
+  }
+);
