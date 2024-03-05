@@ -29,12 +29,6 @@ export const getStaticProps = async ({ params }) => {
   };
 };
 
-export async function getStaticPaths() {
-  return {
-    paths: [],
-    fallback: "blocking",
-  };
-}
 
 // Define the Page component
 export default function Page({ page }) {

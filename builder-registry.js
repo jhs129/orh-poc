@@ -4,11 +4,11 @@ import dynamic from "next/dynamic";
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
 Builder.registerComponent(
-  dynamic(() => import("./components/ui/Button")),
+  dynamic(() => import("./components/ui/button")),
   {
     name: "Button",
     inputs: [
-      { name: "text", type: "string", defaultValue: "[Label]"},
+      { name: "text", type: "string", defaultValue: "[Label ]"},
       { name: "target", type: "url" },
     ],
   }
@@ -20,6 +20,7 @@ Builder.registerComponent(
     name: "Logo Carousel",
     inputs: [
       { name: "headline", type: "string", defaultValue: "[Headline]"},
+      { name: "subheadline", type: "string"},
       {
         name: "slides",
         type: "list",
@@ -34,4 +35,17 @@ Builder.registerComponent(
       },
     ],
   }
+);
+
+Builder.registerComponent(
+  dynamic(() => import("./components/ui/practice-card")),
+  {
+    name: "Practice Card",
+    inputs: [
+      { name: "name", type: "string", defaultValue: "[name]" },
+      { name: "title", type: "string", defaultValue: "[title]" },
+      { name: "thumbnail", type: "file" },
+      { name: "name", type: "string", defaultValue: "[altText]" },
+    ],
+  },  
 );

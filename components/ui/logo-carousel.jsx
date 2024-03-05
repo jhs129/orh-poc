@@ -6,8 +6,8 @@ import ArrowNav from "./arrow-nav";
 
 function LogoCarousel(props) {
   let content = props.slides;
-  console.log(props);
-  
+ 
+
   if (!props.slides) {
     content = getDefaultContent();
   }
@@ -63,15 +63,16 @@ function LogoCarousel(props) {
   return (
     <section className='flex flex-col items-center py-8'>
       <h2>{props?.headline || "Lorem ipsum mit doler"}</h2>
+      {props?.subheadline && <p>{props.subheadline}</p>}
       <div className="flex flex-row mx-auto">
-      <a className="my-auto" onClick={() => shiftSlides('reverse')}><ArrowNav height = '60' width = '60' lineWidth='1' circleColor = '#CF4B08' arrowColor = '#FFF' iconType = 'reverse'/></a>
-      <div className='flex flex-col md:flex-row space-x-4 h-48'>
-        {slides.map((slide, index) => (
-          <Image src={slide.image} alt={slide.alt} key={index} width={200} height={200} />
-        ))}
+        <a className="my-auto" onClick={() => shiftSlides('reverse')}><ArrowNav height='60' width='60' lineWidth='1' circleColor='#CF4B08' arrowColor='#FFF' iconType='reverse' /></a>
+        <div className='flex flex-col md:flex-row space-x-4 h-48'>
+          {slides.map((slide, index) => (
+            <Image src={slide.image} alt={slide.alt} key={index} width={200} height={200} />
+          ))}
+        </div>
+        <a className='my-auto' onClick={() => shiftSlides('forward')}><ArrowNav height='60' width='60' lineWidth='1' circleColor='#CF4B08' arrowColor='#FFF' iconType='forward' /></a>
       </div>
-      <a className='my-auto' onClick={() => shiftSlides('forward')}><ArrowNav height = '60' width = '60' lineWidth='1' circleColor = '#CF4B08' arrowColor = '#FFF' iconType = 'forward'/></a>
-          </div>
     </section>
   );
 }
