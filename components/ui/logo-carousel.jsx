@@ -6,6 +6,8 @@ import ArrowNav from "./arrow-nav";
 
 function LogoCarousel(props) {
   let content = props.slides;
+  console.log(props);
+  
   if (!props.slides) {
     content = getDefaultContent();
   }
