@@ -4,6 +4,7 @@ import HeaderBar from "@/components/layout/HeaderBar";
 import Footer from "@/components/layout/Footer";
 import { BuilderComponent, builder, useIsPreviewing } from "@builder.io/react";
 import Head from "next/head";
+import LogoCarousel from "@/components/ui/logo-carousel";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
@@ -12,7 +13,7 @@ export default function Home(props) {
     <main>
       <TopNavBar content={props?.topnavbar || undefined}/>
       <HeaderBar logoImage="/images/orh-logo.png" logoAlt="Orlando Health Logo" content={props?.headerbar || undefined}/>
-      <div>Peanut Butter and Jelly go here</div>
+      <LogoCarousel />
       <Footer />
     </main>
   );

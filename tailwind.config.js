@@ -19,7 +19,7 @@ module.exports = {
         secondaryDark: '#dfdfdf',
         primaryAccent: '#CF4B08',
         secondaryAccent: '#eee47b',
-        tertiaryAccent: 'hsl(192, 100%, 45%, .7)',
+        tertiaryAccent: '#A01534',
       },
       fontFamily: {
         sans: ['Lufga', 'sans-serif'],

@@ -15,7 +15,7 @@ function TopNavBar(props) {
   } else {
     navigation = props.content;
   }
-  console.log(navigation);
+  
 
   return (
     <div className="hidden lg:flex gap-5 justify-between px-6 py-2 text-center text-white uppercase bg-neutral-700 max-md:flex-wrap max-md:pr-5">

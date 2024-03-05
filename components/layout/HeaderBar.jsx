@@ -12,15 +12,12 @@ import Image from 'next/image';
 function HeaderBar({ logoImage, mobileLogoImage, logoAlt, content }) {
 
   let navigation;
-  console.log("content.content");
-  console.log(content);
+ 
   if (!content) {
     navigation = getDefaultContent();
   } else {
     navigation = content;
   }
-  console.log("header bar content");
-  console.log(navigation);
 
   return (
     <div className="flex gap-5 justify-between px-6 pb-1.5 bg-white border-b border-solid border-b-zinc-300 max-md:flex-wrap max-md:pl-5">
@@ -40,7 +37,7 @@ function HeaderBar({ logoImage, mobileLogoImage, logoAlt, content }) {
       </nav>
       <div className="flex flex-row gap-8 my-auto text-base leading-5 text-center text-white uppercase whitespace-nowrap max-md:flex-wrap max-md:max-w-full">
         {navigation.group[0].level1.map((item, index) => (
-             <div className="hidden lg:flex grow justify-center px-8 py-4 leading-5 text-base bg-primaryAccent text-primaryLight hover:bg-primaryDark hover:text-secondaryAccent rounded-3xl max-md:px-5">
+             <div className="hidden lg:flex grow justify-center px-8 py-4 align-middle leading-5 text-base bg-primaryAccent text-primaryLight hover:bg-primaryDark hover:text-secondaryAccent rounded-3xl max-md:px-5">
              <a href={item.src} key={index}>{item.text}</a>
            </div>
         ))}
