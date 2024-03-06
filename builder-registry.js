@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
 Builder.registerComponent(
-  dynamic(() => import("./components/ui/button")),
+  dynamic(() => import("@/components/ui/button")),
   {
     name: "Button",
     inputs: [
@@ -15,7 +15,7 @@ Builder.registerComponent(
 );
 
 Builder.registerComponent(
-  dynamic(() => import("./components/ui/logo-carousel")),
+  dynamic(() => import("@/components/ui/logo-carousel")),
   {
     name: "Logo Carousel",
     inputs: [
@@ -38,7 +38,7 @@ Builder.registerComponent(
 );
 
 Builder.registerComponent(
-  dynamic(() => import("./components/ui/practice-card")),
+  dynamic(() => import("@/components/ui/practice-card")),
   {
     name: "Practice Card",
     inputs: [
@@ -51,7 +51,7 @@ Builder.registerComponent(
 );
 
 Builder.registerComponent(
-  withChildren(dynamic(() => import("./components/ui/card-section"))),
+  withChildren(dynamic(() => import("@/components/ui/card-section"))),
   {
     name: "Card Section",
     childRequirements: {
@@ -71,7 +71,7 @@ Builder.registerComponent(
 );
 
 Builder.registerComponent(
-    dynamic(() => import("./components/ui/social-links")), 
+    dynamic(() => import("@/components/ui/social-links")), 
     {
       name: "Social Links",
     } 
