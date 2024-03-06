@@ -6,7 +6,7 @@ function PracticeCard(props) {
   const { name, title, thumbnail, altText } = props;
   const [isHovered, setIsHovered] = useState(false); // Add missing state variable and useState hook
 
-  let imageValue = thumbnail?.length > 0 ? thumbnail : '/images/primarycare.jpg';
+  let imageValue = thumbnail?.length > 0 ? thumbnail : '/images/primary-care2.png';
   let titleValue = title || 'Sample Practice';
   let nameValue = name || 'sample-practice'; 
 

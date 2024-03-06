@@ -18,13 +18,13 @@ body {
 }
 
 h1 {
-  @apply text-[2.5rem] mb-4 font-sans leading-none text-primaryDark text-center;
+  @apply text-[2.5rem] mb-4 font-sans leading-none text-primaryDark;
 }
 h2 {
-  @apply text-[2rem] mb-4 font-medium font-sans text-primaryDark text-center;
+  @apply text-[2rem] mb-4 font-medium font-sans text-primaryDark;
 }
 h3 {
-  @apply text-xl mt-4 mb-4 font-sans text-primaryAccent leading-5;
+  @apply text-xl mt-4 mb-4 font-sans leading-5;
 }
 h4 {
   @apply text-lg mb-4 font-sans;

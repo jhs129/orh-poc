@@ -84,7 +84,7 @@ export default function Page({ page }) {
       <TopNavBar content={page?.topnavbar || undefined}/>
       <HeaderBar logoImage="/images/orh-logo.png" mobileLogoImage="/images/orh-logo-mobile.png" logoAlt="Orlando Health Logo" content={page?.headerbar || undefined}/>
       <BuilderComponent model="page" content={page || undefined} />
-      <Footer/>
+      {/* <Footer/> */}
     </>
   );
 }
