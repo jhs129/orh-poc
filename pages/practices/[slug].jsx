@@ -12,7 +12,7 @@ import {
   import { useEffect } from "react";
   import TopNavBar from "@/components/layout/top-nav-bar";
   import HeaderBar from "@/components/layout/header-bar";
-  import Footer from "@/components/layout/footer";
+  import Footer from "@/components/layout/Footer";
   import Hero from "@/components/ui/hero";
   
   builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);

@@ -6,7 +6,7 @@ import Head from "next/head";
 import "../builder-registry";
 import TopNavBar from "../components/layout/top-nav-bar";
 import HeaderBar from "@/components/layout/header-bar";
-import Footer from "@/components/layout/footer";
+import Footer from "@/components/layout/Footer";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
