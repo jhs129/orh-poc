@@ -38,6 +38,42 @@ Builder.registerComponent(
 );
 
 Builder.registerComponent(
+  withChildren(dynamic(() => import("@/components/ui/link-list-columns"))),
+  {
+    name: "Link List Columns",
+    childRequirements: {
+      message: "You can only put in Card components",
+      query: {
+        "component.name": { $in: ["List Item"] },
+      },
+    },
+    inputs: [
+      {
+        name: "links",
+        type: "list",
+        subFields: [
+          { name: "text", defaultValue: "link text", type: "string" },
+          { name: "href", defaultValue: "#", type: "string" },
+        ],
+      },
+    ],
+  }
+);
+
+Builder.registerComponent(
+  dynamic(() => import("@/components/ui/list-item")),
+  {
+    name: "List Item",
+    inputs: [
+      { name: "text", defaultValue: "link text", type: "string" },
+      { name: "href", defaultValue: "#", type: "string" },
+    ],
+  },  
+);
+
+
+
+Builder.registerComponent(
   dynamic(() => import("@/components/ui/practice-card")),
   {
     name: "Practice Card",
@@ -76,3 +112,4 @@ Builder.registerComponent(
       name: "Social Links",
     } 
 );
+

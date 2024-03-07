@@ -63,11 +63,11 @@ button {
 }
 
 ul {
-  @apply list-disc;
+  @apply list-disc px-4;
 }
 
 li {
-  @apply mb-4;  
+  @apply mb-2 pr-4;  
 }
 
 }
