@@ -23,7 +23,7 @@ function PracticeCard(props) {
       >
         <div className="flex mx-auto">
           <h3 className="text-primaryLight group-hover:text-primaryDark mx-auto px-4">
-            <Link href={`/practices/${nameValue}`}>{titleValue}</Link>
+            <a href={`/practices/${nameValue}`}>{titleValue}</a>
           </h3>
         </div>
       </div>
