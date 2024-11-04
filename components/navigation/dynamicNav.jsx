@@ -6,13 +6,22 @@ const DynamicNav = ({ navigation }) => {
   const buildHierarchy = (navItems) => {
     const map = {};
 
-    // Populate map with all items
-    navItems.forEach((item) => {
-      const parts = item.data.url.split('/').filter(Boolean); // Split URL and remove empty parts
-      const key = parts.join('/');
+    // Check if navItems is an array and has items
+    if (Array.isArray(navItems) && navItems.length > 0) {
+      // Populate map with all items
+      navItems.forEach((item) => {
+        if (item && item.data && item.data.url) {
+          const parts = item.data.url.split('/').filter(Boolean); // Split URL and remove empty parts
+          const key = parts.join('/');
 
-      map[key] = { ...item, children: [] };
-    });
+          map[key] = { ...item, children: [] };
+        } else {
+          console.error('Invalid item detected:', item);
+        }
+      });
+    } else {
+      console.error('navItems is not a valid array or is empty');
+    }
 
     // Assign children based on URL hierarchy
     Object.keys(map).forEach((key) => {

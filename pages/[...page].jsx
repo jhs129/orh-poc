@@ -8,6 +8,7 @@ import TopNavBar from "../components/layout/top-nav-bar";
 import HeaderBar from "@/components/layout/header-bar";
 import Footer from "@/components/layout/Footer";
 import DynamicNav from "@/components/navigation/dynamicNav";
+import LanguageToggle from "@/components/navigation/languageToggle";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
