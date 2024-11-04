@@ -38,6 +38,17 @@ Builder.registerComponent(
 );
 
 Builder.registerComponent(
+  dynamic(() => import("@/components/navigation/dynamicNav")),
+  {
+    name: "Dynamic Nav",
+    inputs: [
+      { name: "query", type: "string", defaultValue: "foobar"},
+    ],
+  }
+);
+
+
+Builder.registerComponent(
   withChildren(dynamic(() => import("@/components/ui/link-list-columns"))),
   {
     name: "Link List Columns",
