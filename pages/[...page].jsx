@@ -7,6 +7,7 @@ import "../builder-registry";
 import TopNavBar from "../components/layout/top-nav-bar";
 import HeaderBar from "@/components/layout/header-bar";
 import Footer from "@/components/layout/Footer";
+import DynamicNav from "@/components/navigation/dynamicNav";
 
 builder.init(process.env.NEXT_PUBLIC_BUILDER_API_KEY);
 
@@ -31,10 +32,18 @@ export const getStaticProps = async ({ params }) => {
     })
     .toPromise();
 
+    const navPages = await builder.getAll("page", {
+      fields: 'data.url,data.navigationTitle,data.breadCrumbTitle,data.includeInBreadCrumb,data.navPriority',
+      options: { noTargeting: true },
+      query: { "data.includeInNavigation": true },
+    });
+
+
   // Return the page content as props
   return {
     props: {
       page: page || null,
+      nav: navPages || null,
       topnavbar: topNavContent?.data || null,
       headerbar: headerBarContent?.data || null,
     },
@@ -53,6 +62,8 @@ export async function getStaticPaths() {
     options: { noTargeting: true },
   });
 
+
+
   // Generate the static paths for all pages in Builder
   return {
     paths: pages
@@ -63,7 +74,7 @@ export async function getStaticPaths() {
 }
 
 // Define the Page component
-export default function Page({ page }) {
+export default function Page({ page, nav, topnavbar,  headerbar}) {
   const router = useRouter();
   const isPreviewing = useIsPreviewing();
 
@@ -83,6 +94,8 @@ export default function Page({ page }) {
       {/* Render the Builder page */}
       <TopNavBar content={page?.topnavbar || undefined}/>
       <HeaderBar logoImage="/images/orh-logo.png" mobileLogoImage="/images/orh-logo-mobile.png" logoAlt="Orlando Health Logo" content={page?.headerbar || undefined}/>
+      <DynamicNav query="foobar" navigation={nav}/>
+      
       <BuilderComponent model="page" content={page || undefined} />
       <Footer/>
     </>
